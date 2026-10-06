@@ -1,0 +1,2309 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<title>Customer Visit | Trade Developer</title>
+
+<style>
+
+:root {
+
+  --primary: #d71920;
+  --primary-dark: #b31319;
+
+  --dark: #1f2937;
+
+  --grey: #6b7280;
+
+  --light: #f5f6f8;
+
+  --border: #e5e7eb;
+
+  --success: #16833b;
+
+  --warning: #b45309;
+
+}
+
+
+* {
+
+  box-sizing: border-box;
+
+}
+
+
+body {
+
+  margin: 0;
+
+  background: var(--light);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  color: var(--dark);
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.topbar {
+
+  background: white;
+
+  border-bottom: 5px solid var(--primary);
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 50;
+
+}
+
+
+.header {
+
+  max-width: 900px;
+
+  margin: auto;
+
+  padding: 18px 20px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+
+.brand {
+
+  font-size: 27px;
+
+  font-weight: 900;
+
+  color: var(--primary);
+
+  letter-spacing: 1.5px;
+
+}
+
+
+.header-title {
+
+  text-align: right;
+
+  font-size: 13px;
+
+  color: var(--grey);
+
+}
+
+
+
+.progress-container {
+
+  width: 100%;
+
+  height: 4px;
+
+  background: #eee;
+
+}
+
+
+.progress-bar {
+
+  height: 100%;
+
+  width: 0%;
+
+  background: var(--primary);
+
+  transition: width .25s;
+
+}
+
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+
+  max-width: 900px;
+
+  margin: auto;
+
+  padding: 22px 15px 60px;
+
+}
+
+
+.intro {
+
+  margin-bottom: 22px;
+
+}
+
+
+.intro h1 {
+
+  margin: 0 0 7px;
+
+  font-size: 27px;
+
+}
+
+
+.intro p {
+
+  margin: 0;
+
+  color: var(--grey);
+
+  line-height: 1.5;
+
+}
+
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+  background: white;
+
+  border-radius: 14px;
+
+  padding: 24px;
+
+  margin-bottom: 18px;
+
+  box-shadow:
+    0 3px 14px rgba(0,0,0,.055);
+
+}
+
+
+.card h2 {
+
+  margin: 0 0 18px;
+
+  font-size: 19px;
+
+  padding-bottom: 12px;
+
+  border-bottom: 1px solid var(--border);
+
+}
+
+
+.section-number {
+
+  display: inline-flex;
+
+  width: 30px;
+
+  height: 30px;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  color: white;
+
+  margin-right: 8px;
+
+  font-size: 14px;
+
+}
+
+
+
+/* =========================
+   FORMS
+========================= */
+
+label.field-label {
+
+  display: block;
+
+  font-weight: 650;
+
+  margin-top: 15px;
+
+  margin-bottom: 7px;
+
+  font-size: 14px;
+
+}
+
+
+.required {
+
+  color: var(--primary);
+
+}
+
+
+input,
+select,
+textarea {
+
+  width: 100%;
+
+  padding: 13px 14px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 9px;
+
+  font-size: 16px;
+
+  background: white;
+
+  color: var(--dark);
+
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+
+  outline: none;
+
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px rgba(215,25,32,.08);
+
+}
+
+
+textarea {
+
+  min-height: 100px;
+
+  resize: vertical;
+
+}
+
+
+.grid-2 {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+}
+
+
+
+/* =========================
+   CHECKBOX CARDS
+========================= */
+
+.options {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 9px;
+
+}
+
+
+.option {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 13px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  background: #fafafa;
+
+  font-size: 14px;
+
+}
+
+
+.option:hover {
+
+  border-color: #bbb;
+
+}
+
+
+.option input {
+
+  width: auto;
+
+  margin: 0 10px 0 0;
+
+}
+
+
+
+/* =========================
+   GPS
+========================= */
+
+.location-box {
+
+  background: #fafafa;
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  padding: 18px;
+
+}
+
+
+.location-button {
+
+  width: 100%;
+
+  border: none;
+
+  border-radius: 9px;
+
+  padding: 14px;
+
+  background: #262626;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+}
+
+
+.location-button:disabled {
+
+  opacity: .65;
+
+  cursor: default;
+
+}
+
+
+.location-status {
+
+  margin-top: 14px;
+
+  padding: 13px;
+
+  border-radius: 8px;
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  font-size: 14px;
+
+  line-height: 1.55;
+
+}
+
+
+.location-success {
+
+  color: var(--success);
+
+  border-color: #b9e3c3;
+
+  background: #f2fbf4;
+
+}
+
+
+.location-error {
+
+  color: #a31d1d;
+
+  background: #fff6f6;
+
+}
+
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.submit-button {
+
+  width: 100%;
+
+  background: var(--primary);
+
+  color: white;
+
+  border: none;
+
+  border-radius: 10px;
+
+  padding: 17px;
+
+  font-size: 17px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+}
+
+
+.submit-button:hover {
+
+  background: var(--primary-dark);
+
+}
+
+
+.submit-button:disabled {
+
+  background: #999;
+
+  cursor: not-allowed;
+
+}
+
+
+
+/* =========================
+   MESSAGES
+========================= */
+
+.hidden {
+
+  display: none !important;
+
+}
+
+
+.message {
+
+  padding: 18px;
+
+  border-radius: 10px;
+
+  margin-bottom: 18px;
+
+  text-align: center;
+
+}
+
+
+.success {
+
+  background: #ecf8ef;
+
+  border: 1px solid #b7dfc0;
+
+  color: var(--success);
+
+}
+
+
+.error {
+
+  background: #fff1f1;
+
+  border: 1px solid #efc2c2;
+
+  color: #9b1c1c;
+
+}
+
+
+.small {
+
+  font-size: 12px;
+
+  color: var(--grey);
+
+  margin-top: 7px;
+
+  line-height: 1.4;
+
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:650px) {
+
+  .grid-2 {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .options {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .header {
+
+    padding: 14px 16px;
+
+  }
+
+
+  .brand {
+
+    font-size: 23px;
+
+  }
+
+
+  .header-title {
+
+    font-size: 11px;
+
+  }
+
+
+  .container {
+
+    padding-top: 15px;
+
+  }
+
+
+  .card {
+
+    padding: 18px;
+
+  }
+
+
+  .intro h1 {
+
+    font-size: 23px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<div class="topbar">
+
+  <div class="header">
+
+    <div class="brand">
+      ISUZU
+    </div>
+
+    <div class="header-title">
+      TRADE DEVELOPER<br>
+      CUSTOMER VISIT
+    </div>
+
+  </div>
+
+
+  <div class="progress-container">
+
+    <div
+      class="progress-bar"
+      id="progressBar">
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<div class="container">
+
+
+<div class="intro">
+
+<h1>Customer & Fleet Engagement</h1>
+
+<p>
+Capture customer needs, fleet information,
+aftersales opportunities and visit location.
+</p>
+
+</div>
+
+
+
+<div
+  id="successMessage"
+  class="message success hidden">
+
+  ✓ Visit successfully recorded.
+
+</div>
+
+
+<div
+  id="errorMessage"
+  class="message error hidden">
+</div>
+
+
+
+<form id="visitForm">
+
+
+<!-- =====================
+     TRADE DEVELOPER
+===================== -->
+
+<div class="card">
+
+<h2>
+<span class="section-number">1</span>
+Visit Details
+</h2>
+
+
+<div class="grid-2">
+
+
+<div>
+
+<label class="field-label">
+Trade Developer
+<span class="required">*</span>
+</label>
+
+<input
+  type="text"
+  id="tradeDeveloper"
+  required
+  placeholder="Enter your name">
+
+</div>
+
+
+
+<div>
+
+<label class="field-label">
+Dealer / Branch
+<span class="required">*</span>
+</label>
+
+<select
+  id="branch"
+  required>
+
+<option value="">
+Select branch
+</option>
+
+<option>Nairobi</option>
+<option>Mombasa</option>
+<option>Eldoret</option>
+<option>Kisumu</option>
+<option>Nakuru</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+</div>
+
+
+<p class="small">
+Your name and branch will be remembered on this device
+for the next customer visit.
+</p>
+
+
+</div>
+
+
+
+<!-- =====================
+     CUSTOMER
+===================== -->
+
+<div class="card">
+
+<h2>
+<span class="section-number">2</span>
+Customer Details
+</h2>
+
+
+<label class="field-label">
+Customer / Company Name
+<span class="required">*</span>
+</label>
+
+<input
+  id="customerName"
+  required
+  placeholder="Customer or company name">
+
+
+<label class="field-label">
+Physical Address
+</label>
+
+<input
+  id="physicalAddress"
+  placeholder="Customer location / address">
+
+
+<div class="grid-2">
+
+
+<div>
+
+<label class="field-label">
+Cell No.
+<span class="required">*</span>
+</label>
+
+<input
+  id="phone"
+  type="tel"
+  required
+  placeholder="e.g. 07XXXXXXXX">
+
+</div>
+
+
+
+<div>
+
+<label class="field-label">
+Designation
+</label>
+
+<input
+  id="designation"
+  placeholder="e.g. Fleet Manager">
+
+</div>
+
+
+</div>
+
+
+<label class="field-label">
+Active Email
+</label>
+
+<input
+  id="email"
+  type="email"
+  placeholder="name@company.com">
+
+
+</div>
+
+
+
+<!-- =====================
+     INDUSTRY
+===================== -->
+
+<div class="card">
+
+<h2>
+<span class="section-number">3</span>
+Industry
+</h2>
+
+
+<label class="field-label">
+Customer Industry
+<span class="required">*</span>
+</label>
+
+
+<select id="industry" required>
+
+<option value="">
+Select industry
+</option>
+
+<option>Individual (Private)</option>
+
+<option>Transport & Logistics</option>
+
+<option>FMCG / Distribution</option>
+
+<option>Construction</option>
+
+<option>Government & Parastatals</option>
+
+<option>Agriculture</option>
+
+<option>Manufacturing</option>
+
+<option>Learning Institutions</option>
+
+<option>Public Transport (PSV)</option>
+
+<option>NGO / Humanitarian Organizations</option>
+
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+
+<!-- =====================
+     FLEET
+===================== -->
+
+<div class="card">
+
+<h2>
+<span class="section-number">4</span>
+Fleet Information
+</h2>
+
+
+<div class="grid-2">
+
+
+<div>
+
+<label class="field-label">
+Number of Isuzu Vehicles
+</label>
+
+<input
+  id="isuzuVehicles"
+  type="number"
+  min="0"
+  placeholder="0">
+
+</div>
+
+
+<div>
+
+<label class="field-label">
+Number of Non-Isuzu Vehicles
+</label>
+
+<input
+  id="nonIsuzuVehicles"
+  type="number"
+  min="0"
+  placeholder="0">
+
+</div>
+
+
+</div>
+
+
+<label class="field-label">
+Where do they currently service and maintain their vehicles?
+</label>
+
+<textarea
+  id="serviceLocation"
+  placeholder="Dealer, workshop, garage, own workshop etc."></textarea>
+
+
+</div>
+
+
+
+<!-- =====================
+     INTEREST
+===================== -->
+
+<div class="card">
+
+<h2>
+<span class="section-number">5</span>
+Customer Interest
+</h2>
+
+
+<label class="field-label">
+Area(s) of Interest
+</label>
+
+
+<div class="options">
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  name="interest"
+  value="Service">
+
+Service
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  name="interest"
+  value="Vehicle Sales">
+
+Vehicle Sales
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  name="interest"
+  value="Spare Parts">
+
+Spare Parts
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  name="interest"
+  value="Oils & Lubes">
+
+Oils & Lubes
+
+</label>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =====================
+     BOOKING
+===================== -->
+
+<div class="card">
+
+<h2>
+<span class="section-number">6</span>
+Service Opportunity
+</h2>
+
+
+<label class="field-label">
+
+Would the customer be interested in booking
+their vehicle for service / repairs or a
+complimentary fleet inspection?
+
+</label>
+
+
+<select
+  id="booking"
+  onchange="toggleBooking()">
+
+<option value="">
+Select
+</option>
+
+<option value="Yes">
+Yes
+</option>
+
+<option value="No">
+No
+</option>
+
+</select>
+
+
+
+<div
+  id="bookingDetails"
+  class="hidden">
+
+
+<div class="grid-2">
+
+
+<div>
+
+<label class="field-label">
+Preferred Date
+</label>
+
+<input
+  id="preferredDate"
+  type="date">
+
+</div>
+
+
+<div>
+
+<label class="field-label">
+Preferred Time
+</label>
+
+<input
+  id="preferredTime"
+  type="time">
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================
+     PRIORITIES
+===================== -->
+
+<div class="card">
+
+<h2>
+<span class="section-number">7</span>
+Service Priorities
+</h2>
+
+
+<label class="field-label">
+What is most important when choosing a service partner?
+</label>
+
+
+<div class="options">
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  name="priority"
+  value="Quality">
+
+Quality
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  name="priority"
+  value="Turnaround Time">
+
+Turnaround Time
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  name="priority"
+  value="Genuine Parts">
+
+Genuine Parts
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  name="priority"
+  value="Cost">
+
+Cost
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  name="priority"
+  value="Convenience">
+
+Convenience
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  name="priority"
+  value="Other">
+
+Other
+
+</label>
+
+
+</div>
+
+
+
+<label class="field-label">
+Biggest maintenance or service challenges
+</label>
+
+
+<textarea
+  id="challenges"
+  placeholder="Capture the customer's key pain points..."></textarea>
+
+
+
+<label class="field-label">
+How often do their vehicles experience unexpected breakdowns or downtime?
+</label>
+
+
+<select id="breakdownFrequency">
+
+<option value="">
+Select
+</option>
+
+<option>Very Frequently</option>
+
+<option>Frequently</option>
+
+<option>Occasionally</option>
+
+<option>Rarely</option>
+
+<option>Never</option>
+
+</select>
+
+
+</div>
+
+
+
+<!-- =====================
+     FOLLOW UP
+===================== -->
+
+<div class="card">
+
+<h2>
+<span class="section-number">8</span>
+Follow-Up
+</h2>
+
+
+<label class="field-label">
+Does this customer require follow-up?
+</label>
+
+
+<select
+  id="followUp"
+  onchange="toggleFollowUp()">
+
+<option value="">
+Select
+</option>
+
+<option value="Yes">
+Yes
+</option>
+
+<option value="No">
+No
+</option>
+
+</select>
+
+
+
+<div
+  id="followUpDetails"
+  class="hidden">
+
+<label class="field-label">
+Follow-Up Date
+</label>
+
+<input
+  id="followUpDate"
+  type="date">
+
+</div>
+
+
+
+<label class="field-label">
+Other comments / customer verbatim
+</label>
+
+<textarea
+  id="comments"
+  placeholder="Capture additional comments, requests or observations..."></textarea>
+
+
+</div>
+
+
+
+<!-- =====================
+     LOCATION
+===================== -->
+
+<div class="card">
+
+<h2>
+<span class="section-number">9</span>
+Visit Location
+</h2>
+
+
+<p>
+Capture the location where the customer visit
+is taking place.
+</p>
+
+
+<div class="location-box">
+
+
+<button
+  type="button"
+  id="locationButton"
+  class="location-button"
+  onclick="captureLocation()">
+
+📍 Capture Current Location
+
+</button>
+
+
+<div
+  id="locationStatus"
+  class="location-status">
+
+Location has not yet been captured.
+
+</div>
+
+
+<label class="field-label">
+Location Note
+</label>
+
+<input
+  id="locationNote"
+  placeholder="e.g. Customer yard, Industrial Area, Nairobi">
+
+
+<p class="small">
+
+The phone will request location permission.
+GPS coordinates and accuracy will be stored
+with the visit.
+
+</p>
+
+
+</div>
+
+</div>
+
+
+
+<button
+  type="submit"
+  id="submitButton"
+  class="submit-button">
+
+Submit Customer Visit
+
+</button>
+
+
+</form>
+
+
+<!-- Hidden form used to avoid CORS/login issues -->
+
+<iframe
+  name="submissionFrame"
+  id="submissionFrame"
+  style="display:none;">
+</iframe>
+
+
+<form
+  id="hiddenSubmissionForm"
+  method="POST"
+  target="submissionFrame"
+  style="display:none;">
+</form>
+
+
+</div>
+
+
+
+<script>
+
+/*
+=====================================================
+ IMPORTANT
+
+ Replace the URL below with your Apps Script
+ /exec deployment URL.
+=====================================================
+*/
+
+const APPS_SCRIPT_URL =
+  'https://script.google.com/macros/s/AKfycbzmTCPwpaYFogFxri9E5B_DYwHeINMiMIz2EYsXS8bqGU0rAfBOzCYTZBEqhEXcvZ1QdA/exec';
+
+
+
+let latitude = '';
+let longitude = '';
+let accuracy = '';
+
+
+
+/* =========================
+   REMEMBER TRADE DEVELOPER
+========================= */
+
+window.addEventListener(
+  'DOMContentLoaded',
+  function() {
+
+    const savedName =
+      localStorage.getItem('tradeDeveloper');
+
+    const savedBranch =
+      localStorage.getItem('branch');
+
+
+    if (savedName) {
+
+      document.getElementById('tradeDeveloper').value =
+        savedName;
+
+    }
+
+
+    if (savedBranch) {
+
+      document.getElementById('branch').value =
+        savedBranch;
+
+    }
+
+  }
+);
+
+
+
+/* =========================
+   CONDITIONAL FIELDS
+========================= */
+
+function toggleBooking() {
+
+  const value =
+    document.getElementById('booking').value;
+
+
+  document
+    .getElementById('bookingDetails')
+    .classList
+    .toggle(
+      'hidden',
+      value !== 'Yes'
+    );
+
+}
+
+
+
+function toggleFollowUp() {
+
+  const value =
+    document.getElementById('followUp').value;
+
+
+  document
+    .getElementById('followUpDetails')
+    .classList
+    .toggle(
+      'hidden',
+      value !== 'Yes'
+    );
+
+}
+
+
+
+/* =========================
+   GPS
+========================= */
+
+function captureLocation() {
+
+  const status =
+    document.getElementById('locationStatus');
+
+  const button =
+    document.getElementById('locationButton');
+
+
+  if (!navigator.geolocation) {
+
+    status.innerHTML =
+      'This device does not support location services.';
+
+    status.className =
+      'location-status location-error';
+
+    return;
+
+  }
+
+
+  button.disabled = true;
+
+  button.innerHTML =
+    'Getting location...';
+
+
+  status.innerHTML =
+    'Requesting GPS location...';
+
+
+  navigator.geolocation.getCurrentPosition(
+
+    function(position) {
+
+
+      latitude =
+        position.coords.latitude;
+
+      longitude =
+        position.coords.longitude;
+
+      accuracy =
+        Math.round(
+          position.coords.accuracy
+        );
+
+
+      const mapURL =
+
+        'https://www.google.com/maps?q=' +
+
+        latitude +
+
+        ',' +
+
+        longitude;
+
+
+      status.innerHTML =
+
+        '<strong>✓ Location captured</strong>' +
+
+        '<br>Latitude: ' +
+        latitude.toFixed(6) +
+
+        '<br>Longitude: ' +
+        longitude.toFixed(6) +
+
+        '<br>Accuracy: ±' +
+        accuracy +
+        ' metres' +
+
+        '<br><br>' +
+
+        '<a href="' +
+        mapURL +
+        '" target="_blank">' +
+
+        'Open location in Google Maps' +
+
+        '</a>';
+
+
+      status.className =
+        'location-status location-success';
+
+
+      button.disabled = false;
+
+      button.innerHTML =
+        '✓ Refresh Location';
+
+
+    },
+
+
+    function(error) {
+
+
+      let message =
+        'Unable to capture location.';
+
+
+      if (
+        error.code ===
+        error.PERMISSION_DENIED
+      ) {
+
+        message =
+          'Location permission was denied. ' +
+          'Please allow location access in your browser settings.';
+
+      }
+
+
+      else if (
+        error.code ===
+        error.POSITION_UNAVAILABLE
+      ) {
+
+        message =
+          'GPS location is currently unavailable.';
+
+      }
+
+
+      else if (
+        error.code ===
+        error.TIMEOUT
+      ) {
+
+        message =
+          'GPS request timed out. Please try again.';
+
+      }
+
+
+      status.innerHTML =
+        message;
+
+
+      status.className =
+        'location-status location-error';
+
+
+      button.disabled = false;
+
+      button.innerHTML =
+        '📍 Try Location Again';
+
+    },
+
+
+    {
+
+      enableHighAccuracy: true,
+
+      timeout: 20000,
+
+      maximumAge: 0
+
+    }
+
+  );
+
+}
+
+
+
+/* =========================
+   CHECKBOX VALUES
+========================= */
+
+function checkboxValues(name) {
+
+  return Array
+    .from(
+      document.querySelectorAll(
+        'input[name="' +
+        name +
+        '"]:checked'
+      )
+    )
+
+    .map(function(item) {
+      return item.value;
+    })
+
+    .join(', ');
+
+}
+
+
+
+/* =========================
+   HIDDEN POST INPUT
+========================= */
+
+function addHiddenField(
+  form,
+  name,
+  value
+) {
+
+  const input =
+    document.createElement('input');
+
+
+  input.type =
+    'hidden';
+
+  input.name =
+    name;
+
+  input.value =
+    value || '';
+
+
+  form.appendChild(input);
+
+}
+
+
+
+/* =========================
+   SUBMISSION
+========================= */
+
+document
+  .getElementById('visitForm')
+  .addEventListener(
+    'submit',
+    function(event) {
+
+
+      event.preventDefault();
+
+
+      hideMessages();
+
+
+
+      if (!this.checkValidity()) {
+
+        this.reportValidity();
+
+        return;
+
+      }
+
+
+
+      /*
+      Require GPS before submission
+      */
+
+      if (
+        !latitude ||
+        !longitude
+      ) {
+
+        document
+          .getElementById('errorMessage')
+          .innerHTML =
+
+          'Please capture the visit location before submitting.';
+
+
+        document
+          .getElementById('errorMessage')
+          .classList
+          .remove('hidden');
+
+
+        document
+          .getElementById('locationButton')
+          .scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+
+
+        return;
+
+      }
+
+
+
+      /*
+      Remember TD / branch
+      */
+
+      const tdName =
+        document
+          .getElementById('tradeDeveloper')
+          .value
+          .trim();
+
+
+      const branch =
+        document
+          .getElementById('branch')
+          .value;
+
+
+      localStorage.setItem(
+        'tradeDeveloper',
+        tdName
+      );
+
+
+      localStorage.setItem(
+        'branch',
+        branch
+      );
+
+
+
+      /*
+      Build hidden POST form
+      */
+
+      const hiddenForm =
+        document
+          .getElementById('hiddenSubmissionForm');
+
+
+      hiddenForm.innerHTML =
+        '';
+
+
+      hiddenForm.action =
+        APPS_SCRIPT_URL;
+
+
+
+      addHiddenField(
+        hiddenForm,
+        'visitTimestamp',
+        new Date().toISOString()
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'tradeDeveloper',
+        tdName
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'branch',
+        branch
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'customerName',
+        document
+          .getElementById('customerName')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'physicalAddress',
+        document
+          .getElementById('physicalAddress')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'phone',
+        document
+          .getElementById('phone')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'designation',
+        document
+          .getElementById('designation')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'email',
+        document
+          .getElementById('email')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'industry',
+        document
+          .getElementById('industry')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'isuzuVehicles',
+        document
+          .getElementById('isuzuVehicles')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'nonIsuzuVehicles',
+        document
+          .getElementById('nonIsuzuVehicles')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'serviceLocation',
+        document
+          .getElementById('serviceLocation')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'interest',
+        checkboxValues('interest')
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'booking',
+        document
+          .getElementById('booking')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'preferredDate',
+        document
+          .getElementById('preferredDate')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'preferredTime',
+        document
+          .getElementById('preferredTime')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'priorities',
+        checkboxValues('priority')
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'challenges',
+        document
+          .getElementById('challenges')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'breakdownFrequency',
+        document
+          .getElementById('breakdownFrequency')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'followUp',
+        document
+          .getElementById('followUp')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'followUpDate',
+        document
+          .getElementById('followUpDate')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'comments',
+        document
+          .getElementById('comments')
+          .value
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'latitude',
+        latitude
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'longitude',
+        longitude
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'accuracy',
+        accuracy
+      );
+
+
+      addHiddenField(
+        hiddenForm,
+        'locationNote',
+        document
+          .getElementById('locationNote')
+          .value
+      );
+
+
+
+      /*
+      Submit
+      */
+
+      const submitButton =
+        document
+          .getElementById('submitButton');
+
+
+      submitButton.disabled =
+        true;
+
+
+      submitButton.innerHTML =
+        'Submitting...';
+
+
+
+      hiddenForm.submit();
+
+
+
+      /*
+      Since submission occurs through hidden iframe,
+      show confirmation after short delay.
+      */
+
+      setTimeout(
+
+        function() {
+
+
+          document
+            .getElementById('successMessage')
+            .classList
+            .remove('hidden');
+
+
+          resetCustomerFields();
+
+
+          submitButton.disabled =
+            false;
+
+
+          submitButton.innerHTML =
+            'Submit Customer Visit';
+
+
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+
+
+        },
+
+        1700
+
+      );
+
+    }
+);
+
+
+
+/* =========================
+   RESET AFTER SUBMISSION
+========================= */
+
+function resetCustomerFields() {
+
+
+  const savedTD =
+    document
+      .getElementById('tradeDeveloper')
+      .value;
+
+
+  const savedBranch =
+    document
+      .getElementById('branch')
+      .value;
+
+
+  document
+    .getElementById('visitForm')
+    .reset();
+
+
+  /*
+  Restore TD information
+  */
+
+  document
+    .getElementById('tradeDeveloper')
+    .value =
+    savedTD;
+
+
+  document
+    .getElementById('branch')
+    .value =
+    savedBranch;
+
+
+  document
+    .getElementById('bookingDetails')
+    .classList
+    .add('hidden');
+
+
+  document
+    .getElementById('followUpDetails')
+    .classList
+    .add('hidden');
+
+
+  latitude =
+    '';
+
+  longitude =
+    '';
+
+  accuracy =
+    '';
+
+
+  const status =
+    document
+      .getElementById('locationStatus');
+
+
+  status.innerHTML =
+    'Location has not yet been captured.';
+
+
+  status.className =
+    'location-status';
+
+
+  document
+    .getElementById('locationButton')
+    .innerHTML =
+    '📍 Capture Current Location';
+
+}
+
+
+
+/* =========================
+   MESSAGES
+========================= */
+
+function hideMessages() {
+
+  document
+    .getElementById('successMessage')
+    .classList
+    .add('hidden');
+
+
+  document
+    .getElementById('errorMessage')
+    .classList
+    .add('hidden');
+
+}
+
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+window.addEventListener(
+  'scroll',
+  function() {
+
+
+    const doc =
+      document.documentElement;
+
+
+    const max =
+      doc.scrollHeight -
+      doc.clientHeight;
+
+
+    const percent =
+      max > 0
+        ? doc.scrollTop / max * 100
+        : 0;
+
+
+    document
+      .getElementById('progressBar')
+      .style.width =
+      percent + '%';
+
+  }
+);
+
+</script>
+
+
+</body>
+
+</html>
