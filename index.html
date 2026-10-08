@@ -2113,7 +2113,8 @@ document
       submitButton.innerHTML =
         'Submitting...';
 
-
+console.log("Submitting to:", hiddenForm.action);
+console.log("Form fields:", [...new FormData(hiddenForm).entries()]);
 
       hiddenForm.submit();
 
