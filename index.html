@@ -1451,7 +1451,7 @@ Submit Customer Visit
 */
 
 const APPS_SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbzmTCPwpaYFogFxri9E5B_DYwHeINMiMIz2EYsXS8bqGU0rAfBOzCYTZBEqhEXcvZ1QdA/exec';
+  'https://script.google.com/macros/s/AKfycbz3gXkn3A9h_CZysbg_1lSKyP6lD91Ct8kyJjx3W01Qt9LDfxdvqMQc2ooSlhy1vx0x/exec';
 
 
 
@@ -2116,7 +2116,35 @@ document
 console.log("Submitting to:", hiddenForm.action);
 console.log("Form fields:", [...new FormData(hiddenForm).entries()]);
 
-      hiddenForm.submit();
+// Submit using fetch without requiring Google login
+fetch(APPS_SCRIPT_URL, {
+  method: 'POST',
+  mode: 'no-cors',
+  body: new FormData(hiddenForm)
+})
+.then(function() {
+
+  // IMPORTANT:
+  // no-cors cannot confirm that Google saved the data.
+  // Do not clear the form or report confirmed success.
+
+  submitButton.disabled = false;
+  submitButton.innerHTML = 'Submit Customer Visit';
+
+  alert(
+    'Submission sent. Please verify the visit ' +
+    'appears in Google Sheets.'
+  );
+
+})
+.catch(function(error) {
+
+  submitButton.disabled = false;
+  submitButton.innerHTML = 'Submit Customer Visit';
+
+  alert('Unable to send submission: ' + error.message);
+
+});
 
 
 
