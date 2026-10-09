@@ -13,7 +13,7 @@
 <div class="overlay" id="loginOverlay"><form class="login" id="loginForm"><h2>Dashboard sign in</h2><p>Authorized Trade Developers and managers only.</p><input type="password" id="password" placeholder="Dashboard password" required autocomplete="current-password"><button class="primary">Sign in</button><p class="error" id="loginError"></p></form></div>
 <script>
 /* SET YOUR CLOUDFLARE WORKER URL HERE (no trailing slash). */
-const API_URL='https://REPLACE-WITH-YOUR-WORKER.workers.dev';
+const API_URL='https://isuzu-customer-dashboard-api.damiannyakoe.workers.dev';
 const $=id=>document.getElementById(id);
 const field=(r,name)=>r[name]||'';
 const num=v=>Number(String(v||'').replace(/,/g,''))||0;
